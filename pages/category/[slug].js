@@ -93,7 +93,7 @@ export async function getStaticPaths() {
       slug: c.attributes.slug,
     },
   }));
-  // console.log(paths);
+  console.log(paths);
 
   return {
     paths,

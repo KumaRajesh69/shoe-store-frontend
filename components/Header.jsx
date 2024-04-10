@@ -48,7 +48,7 @@ const Header = () => {
   const fetchCategories = async () => {
     const { data } = await fetchDataFromApi("/api/catagories?populate=*");
     setCategories(data);
-    // console.log(data);
+    console.log(data);
   };
 
   return (

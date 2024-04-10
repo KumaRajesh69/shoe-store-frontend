@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { makePaymentRequest } from "@/utils/api";
 import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  "pk_test_51P11L7SJsJEiTxj2MHFhVRFVSS4f7xift8T6FV8cIHtrNJg4XZliWadn2HEofrs8OPuXbNTYiDVOOlqjlxzUayr8008R39sst3"
 );
 
 const Cart = () => {
@@ -26,7 +26,6 @@ const Cart = () => {
       const res = await makePaymentRequest("/api/orders", {
         products: cartItems,
       });
-      console.log(products);
 
       await stripe.redirectToCheckout({
         sessionId: res.stripeSession.id,
